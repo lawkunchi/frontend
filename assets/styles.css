@@ -1,0 +1,338 @@
+/* Define root colors */
+:root {
+  --very-dark-grey: #121212;
+  --white: #ffffff;
+  --purple: #cf6679;
+  --dark-purple: #8b0000;
+  --dark-grey: #212121;
+  --red: #cf6679;
+  --light-grey: #f3f3f3;
+}
+
+/* Hide text-danger by default */
+.text-danger {
+  display: none;
+}
+
+/* Set body styles */
+body {
+  background: var(--very-dark-grey);
+  color: var(--white);
+  font-family: "Roboto", sans-serif;
+}
+
+/* Responsive styles for navbar and banner */
+@media (max-width: 992px) {
+  .navbar-nav {
+    flex-direction: row;
+    width: 100%;
+  }
+  .navbar-nav li:first-child {
+    padding: 0 !important;
+  }
+
+  .banner {
+    padding-bottom: 3rem;
+  }
+  .banner h1 {
+    font-size: 80px !important;
+  }
+}
+
+/* Styles for form check input */
+.form-check input {
+  background-color: transparent;
+  border: 2px solid var(--purple);
+}
+
+/* Styles for checked form check input */
+.form-check input:checked {
+  background-color: var(--purple) !important;
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+/* Positioning for modal dialog */
+.modal-dialog {
+  position: absolute;
+  right: 0;
+  left: 0;
+  top: 25%;
+}
+@media (max-width: 992px) {
+  .modal-dialog {
+    top: 15%;
+  }
+}
+
+/* Hide page content by default */
+#page-content {
+  display: none;
+}
+
+/* Hide step2 and step3 by default */
+#step2,
+#step3 {
+  display: none;
+}
+
+/* Styles for button */
+.btn {
+  background: var(--purple);
+  border: none;
+  color: var(--very-dark-grey);
+  border-radius: 5px;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+  font-size: 1.2em;
+  letter-spacing: 1px;
+  transition: background 0.8s ease;
+}
+
+/* Styles for button hover */
+.btn:hover {
+  background: var(--dark-purple);
+}
+
+/* Styles for button focus */
+.btn:focus {
+  box-shadow: none;
+  border: none;
+  outline: none;
+}
+
+/* Styles for timer */
+#timer {
+  font-size: 1.2em;
+  font-weight: bold;
+  color: var(--purple);
+  background: var(--very-dark-grey);
+  padding: 10px;
+  border-radius: 10px;
+  margin: 10px;
+}
+
+/* Styles for navbar */
+.navbar {
+  background: var(--very-dark-grey);
+  color: var(--purple);
+}
+
+/* Styles for navbar links */
+.navbar a {
+  color: var(--purple);
+  text-decoration: none;
+  padding: 10px;
+}
+
+/* Styles for navbar links hover */
+.navbar a:hover {
+  background: var(--dark-purple);
+  transition: background 0.8s ease;
+}
+
+/* Keyframes for blink animation */
+@keyframes blink {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* Styles for registration form */
+#registrationForm {
+  background: var(--very-dark-grey);
+  color: var(--purple);
+  border-radius: 25px;
+  padding: 20px;
+  font-family: "Roboto", sans-serif;
+}
+
+/* Styles for registration form inputs, select and textarea */
+#registrationForm input:not([type="checkbox"]),
+#registrationForm select,
+#registrationForm textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  margin-top: 5px;
+  border-radius: 5px;
+  border: none;
+  background: var(--dark-grey);
+  color: var(--purple);
+}
+
+/* Styles for registration form inputs and select focus */
+#registrationForm input:focus,
+#registrationForm select:focus {
+  outline: none;
+  box-shadow: none;
+  border: 2px solid var(--purple);
+}
+
+/* Styles for registration form button */
+#registrationForm button {
+  background: var(--purple);
+  border: none;
+  color: var(--very-dark-grey);
+  border-radius: 5px;
+  padding: 10px 20px;
+  font-size: 1em;
+  transition: background 0.8s ease;
+}
+
+/* Styles for registration form button hover */
+#registrationForm button:hover {
+  background: var(--dark-purple);
+}
+
+/* Styles for registration form text-danger */
+#registrationForm .form-text.text-danger {
+  color: var(--red);
+}
+
+/* Styles for registration modal content */
+#registrationModal .modal-content {
+  background: var(--very-dark-grey);
+  color: var(--purple);
+  border-radius: 10px;
+  font-family: "Roboto", sans-serif;
+}
+
+/* Styles for registration modal header */
+#registrationModal .modal-header {
+  border-bottom: 1px solid var(--dark-grey);
+}
+
+/* Styles for registration modal title */
+#registrationModal .modal-title {
+  color: var(--purple);
+}
+
+/* Styles for registration modal close button */
+#registrationModal .btn-close {
+  color: var(--purple);
+}
+
+/* Styles for registration modal close button hover */
+#registrationModal .btn-close:hover {
+  color: var(--dark-purple);
+}
+
+/* Styles for registration modal body */
+#registrationModal .modal-body {
+  color: var(--purple);
+}
+
+/* Styles for loader */
+.loader {
+  border: 10px solid var(--light-grey);
+  border-top: 10px solid var(--purple);
+  border-radius: 50%;
+  width: 80px;
+  height: 80px;
+  animation: spin 0.8s linear infinite;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 9999;
+}
+
+/* Keyframes for spin animation */
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Styles for banner */
+.banner {
+  color: var(--white);
+  background: var(--very-dark-grey);
+}
+
+/* Styles for banner headings */
+.banner h1 {
+  font-size: 100px;
+  color: var(--purple);
+}
+
+.banner h2 {
+  font-size: 60px;
+}
+
+.banner h4 {
+  font-size: 30px;
+}
+
+.banner h4 span {
+  color: var(--purple);
+}
+
+/* Styles for banner button */
+.banner .btn {
+  padding: 20px 40px;
+  font-size: 1.5em;
+}
+
+/* Styles for banner button hover */
+.banner .btn:hover {
+  background: var(--dark-purple);
+}
+
+/* Styles for banner image */
+.banner .image {
+  max-width: 375px;
+}
+
+@media (max-width: 992px) {
+  .banner .image {
+    max-width: 100%;
+  }
+}
+
+/* Keyframes for fadeIn animation */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* Styles for fade-in animation */
+.fade-in {
+  animation: fadeIn 2s ease-in-out 1;
+}
+
+/* Keyframes for fadeUp animation */
+@keyframes fadeUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Styles for fade-up animation */
+.fade-up {
+  animation: fadeUp 1s ease-in-out 1;
+}
+
+/* Styles for slow fade-up animation */
+.fade-up-slow {
+  animation: fadeUp 1.5s ease-in-out 1;
+}

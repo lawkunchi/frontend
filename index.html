@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Meta tags -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="./assets/styles.css" />
+
+    <!-- Page Title -->
+    <title>My HTML Page</title>
+  </head>
+  <body>
+    <div id="loader" class="loader"></div>
+
+    <div id="page-content">
+      <!-- Navigation Bar -->
+      <nav class="navbar navbar-expand-lg navbar-light bg-light px-5 py-3">
+        <!-- Brand Logo -->
+        <a class="navbar-brand" href="#">
+          <img
+            src="https://deepdata.nl/assessment/2021/qp51FH37ONmkdh45fqb/assets/france.jpg"
+            width="50"
+          />
+        </a>
+
+        <!-- Navbar Toggle Button -->
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Navbar Items -->
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <div
+            class="ml-auto align-items-center d-flex justify-content-end w-100"
+          >
+            <ul class="navbar-nav align-items-center d-flex">
+              <!-- Timer -->
+              <li class="nav-item px-3">
+                <div id="timer"></div>
+              </li>
+
+              <!-- Login Button -->
+              <li class="nav-item">
+                <button id="loginButton" class="btn btn-primary">Login</button>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+      <!-- Main Content -->
+      <div class="banner container">
+        <div class="row d-flex justify-content-center align-items-center mt-5">
+          <!-- Image and Text Section -->
+          <div class="col-lg-6 col-md-12 d-flex justify-content-end fade-up">
+            <img
+              src="https://images.unsplash.com/photo-1552793084-49132af00ff1?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8YmxhY2slMjBnaXJsfGVufDB8fDB8fHww"
+              alt=""
+              class="rounded img-fluid image"
+            />
+          </div>
+          <div class="col-lg-6 col-md-12">
+            <div class="row">
+              <div class="col-12 fade-up-slow">
+                <h1>Attention!</h1>
+                <h4>
+                  Vous êtes sur le point de découvrir le
+                  <span>TOUT NOUVEAU SITE DE RENCONTRE SEXE</span> dont tous le
+                  monde parle...
+                </h4>
+              </div>
+
+              <!-- Call to Action Section -->
+              <div class="col-12">
+                <ul>
+                  <li>
+                    <p>Profils 100% certifiés</p>
+                  </li>
+                  <li>
+                    <p>Pas de Blabla</p>
+                  </li>
+                </ul>
+                <p>Juste votre code postal pour flirter avec des Coquines!</p>
+                <button class="btn btn-primary" id="register">
+                  CONTINUER ICI
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Registration Modal -->
+      <div
+        class="modal fade"
+        id="registrationModal"
+        tabindex="-1"
+        aria-labelledby="registrationModalLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <!-- Modal Header -->
+            <div class="modal-header">
+              <h5 class="modal-title" id="registrationModalLabel">
+                Registration Form
+              </h5>
+            </div>
+
+            <!-- Modal Body -->
+            <div class="modal-body">
+              <!-- Registration Form -->
+              <form id="registrationForm">
+                <!-- Form Step 1 -->
+                <div id="step1" class="form-group">
+                  <!-- Gender Input -->
+                  <label for="gender">Gender:</label>
+                  <select id="gender" name="gender" class="form-control">
+                    <option value="">Select Gender</option>
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                  </select>
+                  <small id="genderError" class="form-text text-danger"></small>
+
+                  <label for="lookingForGender">Gender:</label>
+                  <select
+                    id="lookingForGender"
+                    name="lookingForGender"
+                    class="form-control"
+                  >
+                    <option value="">Select Gender</option>
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                  </select>
+                  <small
+                    id="lookingForGenderError"
+                    class="form-text text-danger"
+                  ></small>
+
+                  <!-- Next Button -->
+                  <button
+                    type="button"
+                    id="nextButton"
+                    class="btn btn-primary mt-3"
+                  >
+                    Next
+                  </button>
+                </div>
+
+                <!-- Form Step 2 -->
+                <div id="step2" class="form-group">
+                  <!-- Username Input -->
+                  <label for="username">Username:</label>
+                  <input
+                    type="text"
+                    id="username"
+                    name="username"
+                    class="form-control"
+                  />
+                  <small
+                    id="usernameError"
+                    class="form-text text-danger"
+                  ></small>
+
+                  <!-- DOB Input -->
+                  <label for="dob">DOB:</label>
+                  <input type="date" id="dob" name="dob" class="form-control" />
+                  <small id="dobError" class="form-text text-danger"></small>
+
+                  <!-- Next Button -->
+                  <button
+                    type="button"
+                    onclick="formValidator.nextStep()"
+                    class="btn btn-primary mt-3"
+                  >
+                    Next
+                  </button>
+                </div>
+
+                <!-- Form Step 3 -->
+                <div id="step3" class="form-group">
+                  <!-- Email Input -->
+                  <label for="email">Email:</label>
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    class="form-control"
+                  />
+                  <small id="emailError" class="form-text text-danger"></small>
+
+                  <!-- Password Input -->
+                  <label for="password">Password:</label>
+                  <input
+                    type="password"
+                    id="password"
+                    name="password"
+                    class="form-control"
+                  />
+                  <small
+                    id="passwordError"
+                    class="form-text text-danger"
+                  ></small>
+
+                  <!-- TAC Accepted Checkbox -->
+                  <div class="form-check">
+                    <input
+                      type="checkbox"
+                      id="tacAccepted"
+                      name="tacAccepted"
+                      class="form-check-input"
+                    />
+                    <label class="form-check-label" for="tacAccepted"
+                      >I accept terms and conditions.</label
+                    >
+                    <small
+                      id="tacAcceptedError"
+                      class="form-text text-danger"
+                    ></small>
+                  </div>
+
+                  <!-- Next Button -->
+                  <button
+                    type="button"
+                    onclick="formValidator.nextStep()"
+                    class="btn btn-primary mt-3"
+                  >
+                    Submit
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bootstrap JS, Popper.js, and jQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Custom JS -->
+    <script type="text/javascript" src="./assets/main.js"></script>
+  </body>
+</html>
