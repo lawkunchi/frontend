@@ -128,17 +128,6 @@ class CountdownTimer {
     }
 }
 
-// Add an event listener for the 'load' event on the window
-window.addEventListener('load', function () {
-    const loader = document.getElementById('loader');
-    const content = document.getElementById('page-content');
-    // Set a timeout to hide the loader and show the content after 1 second
-    setTimeout(function () {
-        loader.style.display = 'none';
-        content.style.display = 'block';
-    }, 1000); // delay in milliseconds, 1000ms = 1s
-});
-
 // Create a new CountdownTimer instance for the 'timer' element, set for 5 minutes
 const timer = new CountdownTimer('timer', 5);
 // Start the timer
