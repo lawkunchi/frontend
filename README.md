@@ -25,3 +25,6 @@ Ensure you have a modern web browser installed (e.g., Google Chrome, Mozilla Fir
 
 1. **FormValidator Class**: Located in the `assets/main.js` file, this class is responsible for validating the registration form. It is designed to be extensible for future validation needs.
 2. **Countdown Class**: Also located in the `assets/main.js` file, this class handles the countdown functionality. It is designed to be reusable across different parts of the application.
+
+## Lightouse Report
+![Lighthouse Report](https://frontend-ruby-one-84.vercel.app/assets/images/report.png)
